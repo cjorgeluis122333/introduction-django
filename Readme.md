@@ -13,7 +13,7 @@ Go to the route of your project and install this command in your cmd
 
 ```
 
-#### Check if your enviroment was sussesfully created
+#### Check if your environment was sussesfully created
 
 ```bash
  virtualenv --version 
@@ -38,5 +38,5 @@ virtualenv venv
 ### Step 2: Install Django
 
 ```bash
-pip install django
+pip install Django
 ```

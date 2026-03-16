@@ -50,6 +50,7 @@ pip install django
 ```
 
 **Verificar instalación**:
+
 ```bash
 python -m django --version
 # Debería mostrar: 6.0.3
@@ -63,7 +64,7 @@ django-admin startproject mi_proyecto .
 
 **Nota**: El `.` al final crea el proyecto en la carpeta actual. Esto genera:
 
-```
+```file
 mi_proyecto/
 ├── __init__.py
 ├── asgi.py
