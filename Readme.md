@@ -10,6 +10,7 @@ Go to the route of your project and install this command in your cmd
 
 ```bash
    pip install virtualenv 
+
 ```
 
 #### Check if your enviroment was sussesfully created
@@ -21,10 +22,14 @@ Go to the route of your project and install this command in your cmd
 #### Create a folder for save your virtual env
 
 ```bash
+# Para usar la versión más reciente instalada:(Recomendada)
+py -m venv venv
+
+# # Para usar la vesion por defecto
 virtualenv venv
 ```
 
-#### Activate the enviroment 
+#### Activate the enviroment
 
 ```bash
  .\venv\Scripts\activate    

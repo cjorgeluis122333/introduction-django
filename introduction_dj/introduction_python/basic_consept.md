@@ -2,6 +2,18 @@
 
 Here abord the  basic consept about python
 
+## Conocer todas las posivilidades que se pueden aplicar sobre un tipo de dato
+
+This methode is very importan for know  of data type
+
+```py
+string_value = "Pepe"
+mutable_list = [1,2,3,4,5]
+
+print(dir(string_value))  # In console you will see all methode allowed for a string
+print(dir(mutable_list))  # In console you will see all methode allowed for a list
+```
+
 ## Scoope
 
 The scoope in Python is like the ***yalm*** file
