@@ -1,6 +1,6 @@
 # Dinamic type
 
-print("===============================  Dinamic Type")
+print("===============================  Dynamic Type")
 a = 10
 b = 20.5
 c = a + b  
@@ -20,18 +20,18 @@ string3 = 'a'  #This is a string too
 print(string1[3])
 print("======= Work with string")
 print(
-      "Horiginal String: ", string1,
+      "Original String: ", string1,
       "\nupper(): ",string1.upper(),
       "\nlower(): "+string1.lower(),
       "\nswapcase(): "+ string1.swapcase(),
       "\ncapitalice(): "+ string1.capitalize(),
       "\nreplace('string' , 'replace'): "+  string1.replace("string","replace"),
       "\ncount('a'): ", string1.count('a'),
-      "\nstartwith('I am'): ", string1.startswith("I am"),
+      "\nstartswith('I am'): ", string1.startswith("I am"),
       "\nendwith('char'): ", string1.endswith("char"),
       "\nsplit(' '): ", string1.split(" "),
-      "\nfind('a'): ", string1.find("a"), #The index of firt aparition th the string
-      "\nindex('a'): ", string1.index("a"), #The index of firt aparition th the string
+      "\nfind('a'): ", string1.find("a"), #The index of first apparition th the string
+      "\nindex('a'): ", string1.index("a"), #The index of first apparition th the string
       "\nisnumeric(): ", string1.isnumeric(),
       "\nlen(string1): ", len(string1),
       )
@@ -44,8 +44,8 @@ print("===============================  Number(Operators)")
 basic_operation = (1 + 3 * 3) / 2  # 5
 
 rest_of_division_v1 = 10//6 # No lo entendi bien
-module_of_divition = 10%6 # 10/6 me da como resto 4  Return: 4
-eponent = 2**3 #8
+module_of_division = 10%6 # 10/6 me da como resto 4  Return: 4
+exponent = 2**3 #8
 
 print("===============================  None")
 # None(Is like the null)
@@ -54,13 +54,13 @@ nullValue = None
 print("===============================  Parse Variables")
 
 number_string = "10"
-#resultk = number_string + 5   #Error: In java is "105" but in python you can't concat
+#result = number_string + 5   #Error: In java is "105" but in python you can't concat
 result = int(number_string) + 5 # Good: Return: 15 
 
 
-num1 = input("Insert your first number: ")
-num2 = input("Insert your second number: ")
-result = int(num1) + int(num2) 
+#num1 = input("Insert your first number: ")  #Read a number for console
+#num2 = input("Insert your second number: ")
+#result = int(num1) + int(num2) 
 
 
 print("The result is: ",result)
@@ -70,15 +70,48 @@ print("The result is: ",result)
 print("===============================  List")
 # Create list
 list_number = [1,2,3,4,5,10]
-listMutlipleData = ["Pepe",12,True,1.4,'cat']
+listMultipleData = ["Pepe",12,True,1.4,'cat']
 emptyList = []
 list_from_range = list(range(1,100))  # list_from_range = [1..100]
+list_from_constructor = list((1,2,3,12)) # create a list from construct data
 #Get
-list_number[1]  # Return 2
+list_number[2]  # Return 3
+list_number[-1] # Return 10
+
 #Set
 list_number[1] = 99  # list_number = [1,99,3,4,5,10]
-#See al methode allowed for list
+
+#length
+print("Length of list: ",len(list_number)) #6
+
+#find
+print("Check if (4 in list_number): " ,    4 in list_number) # true  
+#==============Insert
+#append: Insert a element to the end
+list_number.append(100) #[1,99,3,4,5,10,100] 
+#extend: Insert many element to the end
+list_number.extend([200,"Car"]) #[1,99,3,4,5,10,100,200,"Car"]
+#insert: Insert a element in specific position
+list_number.insert(1,98) #[1,98,99,3,4,5,10,100,200,"Car"]
+#==============Delete
+#Pop: remove the last and return him
+print(list_number.pop())  #return: "Car" current list:  [1,98,99,3,4,5,10,100,200]
+#Remove: Remove the element you pass for param if not found throw a error
+list_number.remove(98) #current list:  [1,99,3,4,5,10,100,200]
+#Remove everything
+#list_number.clear() #[]
+#==============Sort
+list_number.sort(reverse=True)  #the default value is reverse = false
+print(list_number) #[200, 100, 99, 10, 5, 4, 3, 1]
+
+
+#sort
+sorted_list = list_number.sort()
+
+print("Sorted List",sorted_list)
+#See al method allowed for list
 print(dir(list_number))
+
 
 
 
