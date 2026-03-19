@@ -20,21 +20,21 @@ string3 = 'a'  #This is a string too
 print(string1[3])
 print("======= Work with string")
 print(
-      "Original String: ", string1,
-      "\nupper(): ",string1.upper(),
-      "\nlower(): "+string1.lower(),
-      "\nswapcase(): "+ string1.swapcase(),
-      "\ncapitalice(): "+ string1.capitalize(),
-      "\nreplace('string' , 'replace'): "+  string1.replace("string","replace"),
-      "\ncount('a'): ", string1.count('a'),
-      "\nstartswith('I am'): ", string1.startswith("I am"),
-      "\nendwith('char'): ", string1.endswith("char"),
-      "\nsplit(' '): ", string1.split(" "),
-      "\nfind('a'): ", string1.find("a"), #The index of first apparition th the string
-      "\nindex('a'): ", string1.index("a"), #The index of first apparition th the string
-      "\nisnumeric(): ", string1.isnumeric(),
-      "\nlen(string1): ", len(string1),
-      )
+    "Original String: ", string1,
+    "\nupper(): ",string1.upper(),
+    "\nlower(): "+string1.lower(),
+    "\nswapcase(): "+ string1.swapcase(),
+    "\ncapitalice(): "+ string1.capitalize(),
+    "\nreplace('string' , 'replace'): "+  string1.replace("string","replace"),
+    "\ncount('a'): ", string1.count('a'),
+    "\nstartswith('I am'): ", string1.startswith("I am"),
+    "\nendwith('char'): ", string1.endswith("char"),
+    "\nsplit(' '): ", string1.split(" "),
+    "\nfind('a'): ", string1.find("a"), #The index of first apparition th the string
+    "\nindex('a'): ", string1.index("a"), #The index of first apparition th the string
+    "\nisnumeric(): ", string1.isnumeric(),
+    "\nlen(string1): ", len(string1),
+    )
 
 
 # Number handler
@@ -104,16 +104,67 @@ list_number.remove(98) #current list:  [1,99,3,4,5,10,100,200]
 list_number.sort(reverse=True)  #the default value is reverse = false
 print(list_number) #[200, 100, 99, 10, 5, 4, 3, 1]
 
+#==============Check apparitions
+print(list_number.count(1)) # Check in the list how many time exist the value 1 
 
-#sort
-sorted_list = list_number.sort()
 
-print("Sorted List",sorted_list)
 #See al method allowed for list
-print(dir(list_number))
+#print(dir(list_number))
 
 
+# Tuples: It's a inmutable list 
+print("=================================  Tuples")
 
+tuple_color = ("yellow","withe","yellow","red")
+# Count the apparition number of some value
+print("Count: ",tuple_color.count("yellow")) # 2 
+print("Index of yellow: ",tuple_color.index("yellow")) #0 because is the index of his first apparition
+#print(dir(tuple_color))
+
+
+# Sets: In this kind of list is't possible repeat element
+print("=================================  Sets")
+#============Create
+set_type = {'Car','Move',"Table","Car","Car"} # {'Car', 'Table', 'Move'}
+
+#============ Insert
+set_type.add("car") #{'Car', 'Table', 'Move','car'} -> This value will insert because is't key sensitive
+
+#============ Select
+#Different: Received a list and return a Set with all elements of this list
+print("Different: ",set_type.difference(["Car",'car'])) #Return -> {'Table','Move'}  
+print("Make intersection: ",set_type.intersection(['Span',"Table"])) # {'Table'} 
+print("Make UNION: ",set_type.union(['Span',"Table"])) #  {'Car', 'car', 'Table', 'Move', 'Span'}
+
+
+#================ Update
+#================ Delete
+set_type.difference_update(["Car",'car'])  # Remove all elements matches: {'Move','Table'}
+set_type.discard('Move') # #Return -> None. if you found the element you delete : {'Table'} 
+
+print(set_type)
+#print(dir(set_type))
+
+print("================================= Dictionary (Map or Json)")
+
+dictionary_array = [
+    {"name": "Pepe","age":12},
+    {"name": "Miguel","age":11},
+    {"name": "Jorge","age":22}
+]
+
+dictionary_object = {
+    "name": "Pepe",
+    "age":12,
+    'friends': [
+        'Pepe',
+        'Juan',
+        'Carlos',
+    ]
+}
+
+print(dictionary_array)
+print("Get de",dictionary_object.get("friends"))
 
 # For
 print("===============================  For")
@@ -133,9 +184,13 @@ oper2 =4
 
 if(oper1 == oper2):
     print("Are equals")
+    if oper1 > 2 or oper2 > 2:
+        print("The operators are bigger than two")     
 
 if(oper1 != oper2):
     print("Are Diferent")
+    if oper1 <10 and oper2 < 10:
+        print("The operators are less than ten")
 
 if(oper1 >= oper2):
     print("Are > equals")

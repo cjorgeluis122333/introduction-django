@@ -1,4 +1,4 @@
-# Django consepts
+# Django
 
 ## Basic command in django
 
@@ -40,3 +40,5 @@ virtualenv venv
 ```bash
 pip install Django
 ```
+
+
