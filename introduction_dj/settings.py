@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'mi_app',
-    'product_app'
+    'product_app',
 ]
 
 MIDDLEWARE = [

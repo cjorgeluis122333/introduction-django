@@ -78,12 +78,35 @@ Here inside two kind of migration:
 * ***Level App migration***: This migration exist for transform a simple model of python y a table
 
 ```shell
-   python manage.py makemigration app_name_optional
+  python manage.py makemigrations app_name_optional
 ```
 
 * ***Level Project migration***: This migrations transform all you app migration in tables
   
 ```shell
-  python manage.py migration
+  python manage.py migrate
 ```
 
+### Sample with Migration
+
+#### Step 1: Create the model in your app
+
+```py
+
+```
+
+#### Step 2: Execute the command ***makemigrations***
+
+```shell
+```
+
+```py
+```
+
+#### Step 3: Execute the command ***migration***
+
+```shell
+```
+
+```py
+```
