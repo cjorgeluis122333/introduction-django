@@ -27,7 +27,11 @@ def get_shop_by_id(request,shop_id):
 def create_shop(request,shop_name):
     shop = Shop(name = shop_name)
     shop.save()
-    return JsonResponse(data=shop,safe=False)
+    # Devuelve un JSON serializable con los datos de la tienda creada
+    return JsonResponse(data={
+        'id': shop.id,
+        'name': shop.name,
+    }, safe=False)
 
 # Rerun html
 
@@ -40,7 +44,7 @@ def returnHtmlFile(request):
     return render (request=request, template_name= "index.html",context= {
         'title': title_prueba,
         'username': username,
-        'product:': product
+        'product': product
     })
 
 def returnHtmlFileAbout(request):
