@@ -234,5 +234,28 @@ This response return a ***JSON***
 
 ```
 
+## Admin Panel
 
-## Use the 
+This panel allowed manage your database using a intuitive interface.
+
+```bash
+ python manage.py createsuperuser
+ ```
+
+With this user you have access to make login in admin service
+
+```text
+base_url\admin
+```
+
+When you start season you only can see two option:
+
+1. Group
+2. Users
+
+If you want add more option to your panel, you have to do this:
+
+```
+
+```
+
