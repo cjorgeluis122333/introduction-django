@@ -8,7 +8,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.BigIntegerField()
     shop_id = models.ForeignKey(to=Shop, on_delete=models.CASCADE)
-
+    is_sell = models.BooleanField(default=False)
 class Date(models.Model):
     date= models.DateField()
     year= models.IntegerField()

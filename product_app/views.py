@@ -36,6 +36,7 @@ def returnHtmlFile(request):
     username = "Jorge Luis"
     product = Shop.objects.all()
     
+    print(product)
     return render (request=request, template_name= "index.html",context= {
         'title': title_prueba,
         'username': username,
@@ -47,6 +48,4 @@ def returnHtmlFileAbout(request):
 
         
         
-
-
 
