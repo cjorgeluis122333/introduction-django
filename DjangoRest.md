@@ -42,13 +42,24 @@ pip install djangorestframework
 django-admin startproject project_name . 
 ```
 
-
-
-### Step 6: Create app
+### Step 5: Create app
 
 ```bash
 python manage.py startapp app_name
 ```
+
+### Step 6: Config setting for use django
+
+1. Go to your project django -> setting.py
+2. Search de var INSTALLED_APPS and append in the end:
+
+```py
+    #This is the module of django rest [Obligatory for add django]
+    'rest_framework',
+    # The app do you create
+    'mi_app',
+``` 
+
 
 ### Step 7: Run the server
 
