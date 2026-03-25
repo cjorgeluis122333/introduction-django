@@ -2,7 +2,8 @@ from django.http import HttpResponse, JsonResponse
 from .models import Shop
 #Return HTML
 from django.shortcuts import render
-
+#Return a form
+from .forms import CreateNewShop
 
 # Create your views here.
 def say_hello(request):
@@ -20,8 +21,8 @@ def get_all_shop(request):
 
 
 def get_shop_by_id(request,shop_id):
-    Shop.objects.get(shop_id)
-    return JsonResponse(data=shop_id,safe=False)
+    shop =  Shop.objects.get(shop_id)
+    return JsonResponse(data=shop,safe=False)
     
 
 def create_shop(request,shop_name):
@@ -49,6 +50,23 @@ def returnHtmlFile(request):
 
 def returnHtmlFileAbout(request):
     return render (request=request, template_name= "about.html")
+
+def create_form(request):
+    # Uso GET para recibir parámetros en la URL: /create_form?name=tienda1
+    name = request.GET.get("name")
+    created = False
+    created_shop = None
+
+    if name:
+        # Guarda la tienda solo cuando venga el name por GET
+        created_shop = Shop.objects.create(name=name)
+        created = True
+
+    return render(request, "create_shop.html", {
+        "form": CreateNewShop(),
+        "created": created,
+        "created_shop": created_shop,
+    })
 
         
         

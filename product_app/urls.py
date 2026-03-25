@@ -10,5 +10,7 @@ urlpatterns = [
     path("crud/create/<str:shop_name>",views.create_shop),
     #Return a html
     path("html/",views.returnHtmlFile),
-    path("html/about",views.returnHtmlFileAbout)
+    path("html/about",views.returnHtmlFileAbout),
+    path("html/form",views.create_form)
+    
 ]

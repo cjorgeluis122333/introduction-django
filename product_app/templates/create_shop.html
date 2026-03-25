@@ -1,0 +1,9 @@
+<h1> How to use a form <h1/>
+<form method="get">
+  {{ form.as_p }}
+  <button type="submit">Crear tienda (GET)</button>
+</form>
+
+{% if created %}
+<p>Tienda creada: {{ created_shop.name }} (id={{ created_shop.id }})</p>
+{% endif %}

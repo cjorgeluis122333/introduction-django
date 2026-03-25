@@ -6,7 +6,6 @@ Go to the route of your project and install this command in your cmd
 
 ```bash
    pip install virtualenv 
-
 ```
 
 ### Check if your environment version
@@ -19,7 +18,7 @@ Go to the route of your project and install this command in your cmd
 
 ```bash
 # Para usar la versión más reciente instalada:(Recomendada)
-py -m venv venv
+python -m venv venv
 
 # # Para usar la vesion por defecto
 virtualenv venv
@@ -34,7 +33,7 @@ virtualenv venv
 ### Step 2: Install Django
 
 ```bash
-pip install Django
+pip install django
 ```
 
 ## Create Django project
@@ -220,9 +219,54 @@ In views of your app you can defined two type of response
 
 ### HttpResponse
 
-This response return  ***view***
+This response return  ***view*** this view should be a html
+
+1. Crete a folder migrations
+2. Inside him create the html
+3. In views create a method and this method should use render.
 
 ```py
+def returnHtmlFileAbout(request):
+    return render (request=request, template_name= "about.html")
+
+```
+
+#### You can pass param Backend -> Frontend
+
+```py
+def returnHtmlFile(request):
+    title_prueba = "Pass a param title like a param"
+    username = "Jorge Luis"
+    product = Shop.objects.all()
+    
+    print(product)
+    return render (request=request, template_name= "index.html",context= {
+        'title': title_prueba,
+        'username': username,
+        'product': product
+    })
+
+```
+
+#### ***JINJA***: is like timeliest in Spring
+
+This sintaxis allow binding the backend with the fronted
+
+```html
+<h1>Return a html file from django</h1>
+<h2>{{title}} </h2>  
+<h3>{{username}} </h3>  
+{% for p in product %}
+
+<h4>{{p.name}} </h4>  
+
+{% endfor %}
+
+{% if title == "Default Title" %}
+<p>Is true<p/>
+{% else %}    
+<p>Is false<p/>
+{% endif %}
 
 ```
 
@@ -231,7 +275,14 @@ This response return  ***view***
 This response return a ***JSON***
 
 ```py
-
+def create_shop(request,shop_name):
+    shop = Shop(name = shop_name)
+    shop.save()
+    # Devuelve un JSON serializable con los datos de la tienda creada
+    return JsonResponse(data={
+        'id': shop.id,
+        'name': shop.name,
+    }, safe=False)
 ```
 
 ## Admin Panel
@@ -253,9 +304,16 @@ When you start season you only can see two option:
 1. Group
 2. Users
 
-If you want add more option to your panel, you have to do this:
+## Create forms from django
 
+1. You have to create a file forms.py
+2. This file constrains the info of all fills intervention in this form
+3. In your views you pass the class you created like a param for example 'form': FormClassShop
+4. In the html you have to create a form like this:
+
+```html
+<form method= "POST"> 
+  {% csrf_token %}
+  {{form}}
+</form> 
 ```
-
-```
-
