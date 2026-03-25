@@ -154,3 +154,10 @@ This generate the rout of all methods (GET, POST, PUT, DELETE) in just one line
 * prefix: The path of your project
 * viewset: Your api viewset class
 * basename
+
+## All your dependencies
+
+```py
+pip freeze > requirements.txt
+```
+
